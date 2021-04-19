@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_container">16dp</dimen>
+    <dimen name="padding_item">8dp</dimen>
+    <dimen name="card_radius">8dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+    <dimen name="width_category">108dp</dimen>
+    <dimen name="height_category">48dp</dimen>
+    <dimen name="width_relevant">160dp</dimen>
+    <dimen name="height_relevant">120dp</dimen>
+</resources>

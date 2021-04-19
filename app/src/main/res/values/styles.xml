@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MainText" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/ibm_plex_serif</item>
+        <item name="android:textColor">@color/darkest_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="RelevantTitle" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/ibm_plex_serif</item>
+        <item name="android:textColor">@color/almost_black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="RelevantAuthorText" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textColor">@color/darker_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="RelevantTimeText" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/ibm_plex_serif_light</item>
+        <item name="android:textColor">@color/darkest_gray</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="MainTitle" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/darkest_gray</item>
+    </style>
+
+    <style name="CategoryTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="fontFamily">@font/ibm_plex_sans_medium</item>
+    </style>
+
+    <style name="HeaderTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">17sp</item>
+        <item name="fontFamily">@font/ibm_plex_serif_medium</item>
+    </style>
+
+    <style name="OtherTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/darkest_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/ibm_plex_serif_medium</item>
+    </style>
+</resources>
