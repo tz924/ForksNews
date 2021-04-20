@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/header_nav"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Fresh News Just For You" />
+            tools:text="@string/title_header" />
 
         <ImageView
             android:id="@+id/header_profile"
@@ -44,12 +44,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_header" />
+            app:srcCompat="@drawable/profile_header"
+            android:contentDescription="@string/header_profile" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/category_rv"
+        android:id="@+id/section_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipChildren="false"
@@ -61,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
         tools:itemCount="5"
-        tools:listitem="@layout/item_category"
+        tools:listitem="@layout/item_section"
         tools:orientation="horizontal"
         tools:visibility="visible" />
 
@@ -76,7 +77,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category_rv"
+        app:layout_constraintTop_toBottomOf="@+id/section_rv"
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -89,7 +90,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:contentDescription="Preview"
+                android:contentDescription="@string/current_news"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,23 +108,23 @@
                 app:layout_constraintTop_toBottomOf="@+id/image_main">
 
                 <TextView
-                    android:id="@+id/author_main"
+                    android:id="@+id/contributor_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/MainText"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/section_main"
-                    tools:text="Donald J. Trump" />
+                    tools:text="@string/fake_author" />
 
                 <TextView
                     android:id="@+id/section_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/padding_item"
-                    android:textAppearance="@style/RelevantAuthorText"
+                    android:textAppearance="@style/RelatedAuthorText"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/title_main"
-                    tools:text="Environment" />
+                    tools:text="@string/fake_section" />
 
                 <TextView
                     android:id="@+id/title_main"
@@ -133,7 +134,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Think climate change is a hoax? Don’t watch this Google Earth timelapse" />
+                    tools:text="@string/fake_news" />
 
                 <TextView
                     android:id="@+id/datetime_main"
@@ -141,9 +142,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/padding_item"
                     android:textAppearance="@style/MainText"
-                    app:layout_constraintStart_toEndOf="@+id/author_main"
-                    app:layout_constraintTop_toTopOf="@+id/author_main"
-                    tools:text="4/14 00:00" />
+                    app:layout_constraintStart_toEndOf="@+id/contributor_main"
+                    app:layout_constraintTop_toTopOf="@+id/contributor_main"
+                    tools:text="@string/fake_datetime" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -151,7 +152,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/news_relevant"
+        android:id="@+id/related_rv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_container"
@@ -160,11 +161,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_main"
         tools:itemCount="3"
-        tools:listitem="@layout/item_relevant"
+        tools:listitem="@layout/item_related"
         tools:orientation="horizontal" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/news_other"
+        android:id="@+id/other_rv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_container"
@@ -173,7 +174,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/news_relevant"
+        app:layout_constraintTop_toBottomOf="@+id/related_rv"
         app:layout_constraintVertical_bias="0.0"
         tools:itemCount="10"
         tools:listitem="@layout/item_other" />

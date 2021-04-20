@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ForksNews</string>
+    <string name="title_header">Forks News Just For You</string>
+    <string name="header_profile">User profile icon</string>
+    <string name="current_news">Snapshot for current news</string>
+    <string name="fake_news">Think climate change is a hoax? Don’t watch this Google Earth timelapse</string>
+    <string name="fake_section">Environment</string>
+    <string name="fake_datetime">4/14 00:00</string>
+    <string name="fake_author">Donald J. Trump</string>
 </resources>

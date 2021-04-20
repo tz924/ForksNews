@@ -15,55 +15,56 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/title_relevant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/light_gray"
-            android:padding="@dimen/padding_item"
-            android:textAppearance="@style/RelevantTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Google Earth’s new Timelapse feature shows chilling effect of climate change" />
+          android:id="@+id/title_related"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="@dimen/padding_item"
+          android:background="@color/light_gray"
+          android:maxLines="4"
+          android:textAppearance="@style/RelatedTitle"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:text="Google Earth’s new Timelapse feature shows chilling effect of climate change" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/details_relevant"
+            android:id="@+id/details_related"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/normal_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_relevant">
+            app:layout_constraintTop_toBottomOf="@+id/title_related">
 
             <TextView
-                android:id="@+id/author_relevant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/padding_item"
-                android:text="Joseph R. Biden"
-                android:textAppearance="@style/RelevantAuthorText"
-                app:layout_constraintEnd_toStartOf="@+id/play_relevant"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+              android:id="@+id/contributor_related"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:paddingStart="@dimen/padding_item"
+              android:textAppearance="@style/RelatedAuthorText"
+              app:layout_constraintEnd_toStartOf="@+id/play_related"
+              app:layout_constraintHorizontal_bias="0.0"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              tools:text="Joseph R. Biden" />
 
             <TextView
-                android:id="@+id/time_relevant"
+                android:id="@+id/time_related"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/padding_item"
                 android:paddingBottom="@dimen/padding_item"
                 android:text="11 hours ago"
-                android:textAppearance="@style/RelevantTimeText"
+                android:textAppearance="@style/RelatedTimeText"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/play_relevant"
+                app:layout_constraintEnd_toStartOf="@+id/play_related"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/author_relevant" />
+                app:layout_constraintTop_toBottomOf="@+id/contributor_related" />
 
             <ImageButton
-                android:id="@+id/play_relevant"
+                android:id="@+id/play_related"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/padding_item"
