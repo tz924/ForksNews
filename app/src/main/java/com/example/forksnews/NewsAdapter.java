@@ -17,7 +17,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
   public static class ViewHolder extends RecyclerView.ViewHolder {
 
-    // TODO Define private variables for views
     private final Context context;
 
     public TextView relatedTitleView;
@@ -75,7 +74,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     LayoutInflater inflater = LayoutInflater.from(context);
 
     // Inflate news item layout and return the view holder
-    // TODO
     View relatedNewsView = inflater.inflate(R.layout.item_related, parent, false);
     return new ViewHolder(context, relatedNewsView);
   }
@@ -104,7 +102,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     // populate data into the item through holder
     News news = newsList.get(position);
 
-    // TODO Set up views
+    // Set up views
     holder.relatedTitleView.setText(news.getTitle());
     holder.relatedContributorView.setText(news.getContributor());
     holder.relatedTimeView.setText(news.getPast());

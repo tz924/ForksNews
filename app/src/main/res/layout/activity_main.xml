@@ -67,84 +67,84 @@
         tools:visibility="visible" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_container"
-        android:layout_marginEnd="@dimen/margin_container"
-        app:cardCornerRadius="@dimen/card_radius"
-        app:cardElevation="@dimen/card_elevation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/section_rv"
-        app:layout_constraintVertical_bias="0.0">
+      android:id="@+id/card_main"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_container"
+      android:layout_marginEnd="@dimen/margin_container"
+      app:cardCornerRadius="@dimen/card_radius"
+      app:cardElevation="@dimen/card_elevation"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/section_rv"
+      app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/wrapper_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+          android:id="@+id/wrapper_main"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/image_main"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/current_news"
-                android:scaleType="fitCenter"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/image_preview" />
+              android:id="@+id/image_main"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:adjustViewBounds="true"
+              android:contentDescription="@string/current_news"
+              android:scaleType="fitCenter"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              tools:srcCompat="@drawable/image_preview" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/details_main"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@color/normal_gray"
-                android:padding="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_main">
+              android:id="@+id/details_main"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:padding="8dp"
+              android:background="@color/normal_gray"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/image_main">
 
                 <TextView
-                    android:id="@+id/contributor_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/MainText"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/section_main"
-                    tools:text="@string/fake_author" />
+                  android:id="@+id/contributor_main"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textAppearance="@style/MainText"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/section_main"
+                  tools:text="@string/fake_author" />
 
                 <TextView
-                    android:id="@+id/section_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_item"
-                    android:textAppearance="@style/RelatedAuthorText"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/title_main"
-                    tools:text="@string/fake_section" />
+                  android:id="@+id/section_main"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/padding_item"
+                  android:textAppearance="@style/RelatedAuthorText"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/title_main"
+                  tools:text="@string/fake_section" />
 
                 <TextView
-                    android:id="@+id/title_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/MainTitle"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@string/fake_news" />
+                  android:id="@+id/title_main"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textAppearance="@style/MainTitle"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  tools:text="@string/fake_news" />
 
                 <TextView
-                    android:id="@+id/datetime_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/padding_item"
-                    android:textAppearance="@style/MainText"
-                    app:layout_constraintStart_toEndOf="@+id/contributor_main"
-                    app:layout_constraintTop_toTopOf="@+id/contributor_main"
-                    tools:text="@string/fake_datetime" />
+                  android:id="@+id/datetime_main"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="@dimen/padding_item"
+                  android:textAppearance="@style/MainText"
+                  app:layout_constraintStart_toEndOf="@+id/contributor_main"
+                  app:layout_constraintTop_toTopOf="@+id/contributor_main"
+                  tools:text="@string/fake_datetime" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -152,31 +152,55 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/related_rv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_container"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_main"
-        tools:itemCount="3"
-        tools:listitem="@layout/item_related"
-        tools:orientation="horizontal" />
+      android:id="@+id/related_rv"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_container"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/card_main"
+      tools:itemCount="3"
+      tools:listitem="@layout/item_related"
+      tools:orientation="horizontal" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/other_rv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_container"
-        android:layout_marginTop="@dimen/margin_container"
-        android:layout_marginEnd="@dimen/margin_container"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/related_rv"
-        app:layout_constraintVertical_bias="0.0"
-        tools:itemCount="10"
-        tools:listitem="@layout/item_other" />
+      android:id="@+id/other_rv"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_container"
+      android:layout_marginStart="@dimen/margin_container"
+      android:layout_marginEnd="@dimen/margin_container"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/related_rv"
+      app:layout_constraintVertical_bias="0.0"
+      tools:itemCount="10"
+      tools:listitem="@layout/item_other" />
+    <ImageView
+      android:id="@+id/loading_indicator"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:adjustViewBounds="true"
+      android:scaleType="fitCenter"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/header"
+      app:layout_constraintWidth_percent="0.2"
+      app:srcCompat="@drawable/fork" />
+    <TextView
+      android:id="@+id/empty"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_container"
+      android:textAppearance="@style/EmptyText"
+      android:visibility="visible"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/loading_indicator"
+      tools:text="Forking your news" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

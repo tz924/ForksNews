@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.RequiresApi;
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity
   /* Members */
   private List<Section> sections;
   private NewsAdapter newsAdapter;
+  private TextView emptyTextView;
+  private ImageView loadingIndicator;
+  private RecyclerView rvRelated;
+  private RecyclerView rvSection;
+  private CardView mainCard;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +49,13 @@ public class MainActivity extends AppCompatActivity
     setContentView(R.layout.activity_main);
 
     // Set up header
+    findViews();
+
     setTextView(R.id.title_header, R.string.title_header);
 
     setUpSections();
+
+    setUpLoadingView();
 
     setUpRelated();
 
@@ -57,8 +67,22 @@ public class MainActivity extends AppCompatActivity
       Log.i(LOG_TAG, "TEST: calling initLoader()");
       loaderManager.initLoader(NEWS_LOADER_ID, null, this);
     } else {
-      setUpLoadingView();
+      setUpNoInternetView();
     }
+  }
+
+  private void setUpLoadingView() {
+    loadingIndicator.setVisibility(View.VISIBLE);
+    emptyTextView.setVisibility(View.VISIBLE);
+    emptyTextView.setText(R.string.loading);
+  }
+
+  private void findViews() {
+    rvSection = findViewById(R.id.section_rv);
+    rvRelated = findViewById(R.id.related_rv);
+    loadingIndicator = findViewById(R.id.loading_indicator);
+    emptyTextView = findViewById(R.id.empty);
+    mainCard = findViewById(R.id.card_main);
   }
 
 //  Handles Loader
@@ -88,20 +112,23 @@ public class MainActivity extends AppCompatActivity
   public void onLoadFinished(Loader<List<News>> loader, List<News> newsList) {
     Log.i(LOG_TAG, "TEST: onLoadFinished() called");
 
-    // TODO Hide loading indicator because the data has been loaded
-//    View loadingIndicator = findViewById(R.id.loading_indicator);
-//    loadingIndicator.setVisibility(View.GONE);
+    // Hide loading indicator because the data has been loaded
+    loadingIndicator.setVisibility(View.GONE);
+    emptyTextView.setVisibility(View.GONE);
+    mainCard.setVisibility(View.VISIBLE);
 
-    // TODO Set empty state text to display "No news found."
-//    emptyStateTextView.setText(R.string.no_news);
+    // Set empty state text to display "No news found."
+    emptyTextView.setText(getString(R.string.no_news));
 
     // Update UI
     newsAdapter.clear();
 
-    setUpMain(((ArrayList<News>) newsList).remove(0));
-
-    if (newsList != null && !newsList.isEmpty())
+    if (newsList != null && !newsList.isEmpty()) {
+      setUpMain(((ArrayList<News>) newsList).remove(0));
       newsAdapter.addAll(newsList);
+    } else {
+      setUpEmptyView();
+    }
   }
 
   /**
@@ -135,8 +162,6 @@ public class MainActivity extends AppCompatActivity
   }
 
   private void setUpSections() {
-    RecyclerView rvSections = findViewById(R.id.section_rv);
-
     // Inflate sections with fake data
     sections = new ArrayList<>();
     sections.add(new Section("News"));
@@ -146,10 +171,10 @@ public class MainActivity extends AppCompatActivity
     sections.add(new Section("Lifestyle"));
 
     SectionAdapter sectionAdapter = new SectionAdapter(sections);
-    rvSections.setAdapter(sectionAdapter);
+    rvSection.setAdapter(sectionAdapter);
 
     // set up horizontal scroller and ensure no cutoff on the right bound
-    rvSections.setLayoutManager(new LinearLayoutManager(this,
+    rvSection.setLayoutManager(new LinearLayoutManager(this,
         LinearLayoutManager.HORIZONTAL, false) {
       @Override
       public boolean checkLayoutParams(RecyclerView.LayoutParams lp) {
@@ -160,7 +185,6 @@ public class MainActivity extends AppCompatActivity
   }
 
   private void setUpRelated() {
-    RecyclerView rvRelated = findViewById(R.id.related_rv);
     newsAdapter = new NewsAdapter(new ArrayList<>());
     rvRelated.setAdapter(newsAdapter);
     rvRelated.setLayoutManager(new LinearLayoutManager(this,
@@ -184,7 +208,10 @@ public class MainActivity extends AppCompatActivity
 
   // TODO
   private void setUpEmptyView() {
-
+    emptyTextView.setText(R.string.no_news);
+    emptyTextView.setVisibility(View.VISIBLE);
+    loadingIndicator.setVisibility(View.GONE);
+    mainCard.setVisibility(View.GONE);
   }
 
   // TODO
@@ -203,17 +230,18 @@ public class MainActivity extends AppCompatActivity
     setTextView(R.id.datetime_main, mainNews.getLocalTime());
     setImageView(R.id.image_main, mainNews.getThumbnail());
 
-    CardView cardView = findViewById(R.id.card_main);
-    cardView.setOnClickListener(view -> {
+    mainCard.setOnClickListener(view -> {
       Uri newsUri = Uri.parse(mainNews.getUrl());
       startActivity(new Intent(Intent.ACTION_VIEW, newsUri));
     });
   }
 
   // TODO
-  private void setUpLoadingView() {
-//    View loadingIndicator = findViewById(R.id.loading_indicator);
-//    loadingIndicator.setVisibility(View.GONE);
-//    emptyStateTextView.setText(R.string.no_internet_connection);
+  private void setUpNoInternetView() {
+    Log.i(LOG_TAG, "TEST: setUpNoInternetView() called");
+    loadingIndicator.setVisibility(View.GONE);
+    emptyTextView.setText(R.string.no_internet_connection);
+    emptyTextView.setVisibility(View.VISIBLE);
+    mainCard.setVisibility(View.GONE);
   }
 }
