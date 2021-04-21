@@ -103,6 +103,7 @@
               android:layout_height="wrap_content"
               android:padding="8dp"
               android:background="@color/normal_gray"
+              app:layout_constraintBottom_toBottomOf="parent"
               app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toBottomOf="@+id/image_main">
@@ -155,8 +156,10 @@
       android:id="@+id/related_rv"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/margin_container"
+      android:layout_marginTop="@dimen/padding_item"
+      android:layout_marginBottom="@dimen/padding_item"
       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/card_main"
@@ -164,20 +167,6 @@
       tools:listitem="@layout/item_related"
       tools:orientation="horizontal" />
 
-    <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/other_rv"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/margin_container"
-      android:layout_marginStart="@dimen/margin_container"
-      android:layout_marginEnd="@dimen/margin_container"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/related_rv"
-      app:layout_constraintVertical_bias="0.0"
-      tools:itemCount="10"
-      tools:listitem="@layout/item_other" />
     <ImageView
       android:id="@+id/loading_indicator"
       android:layout_width="0dp"
@@ -202,5 +191,16 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/loading_indicator"
       tools:text="Forking your news" />
+    <ImageView
+      android:id="@+id/bottom_nav"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:adjustViewBounds="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintWidth_percent="1"
+      app:srcCompat="@drawable/bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
