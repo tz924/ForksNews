@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity
   // Reuse the same loader by specifying ID
   private static final int NEWS_LOADER_ID = 1;
   private static final String API_KEY = "9cd3ecdd-3d2b-45c1-8db1-f14ca8bdedc2";
-  private static final String BASE_URL = "http://content.guardianapis.com";
-  private static final String SITE_URL = "http://theguardian.com";
+  private static final String BASE_URL = "https://content.guardianapis.com";
+  private static final String SITE_URL = "https://theguardian.com";
   private static final String NEWS_REQUEST_URL = BASE_URL + "/search";
   public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
