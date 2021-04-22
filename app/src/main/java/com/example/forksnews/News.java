@@ -15,7 +15,6 @@ public class News extends Item {
   private String section;
   private String publicationDate;
   private String contributor;
-  private String url;
   private String thumbnail;
   private ZonedDateTime datetime;
 
@@ -31,12 +30,11 @@ public class News extends Item {
   @RequiresApi(api = VERSION_CODES.O)
   public News(String title, String section, String publicationDate, String contributor,
       String url, String thumbnail) {
-    super(title);
+    super(title, url);
     this.section = section;
     this.publicationDate = publicationDate;
     parseDate();
     this.contributor = contributor;
-    this.url = url;
     this.thumbnail = thumbnail;
   }
 
@@ -48,42 +46,17 @@ public class News extends Item {
     return section;
   }
 
-  public void setSection(String section) {
-    this.section = section;
-  }
-
-  public String getPublicationDate() {
-    return publicationDate;
-  }
-
-  public void setPublicationDate(String publicationDate) {
-    this.publicationDate = publicationDate;
-  }
-
   public String getContributor() {
     return contributor;
   }
 
-  public void setContributor(String contributor) {
-    this.contributor = contributor;
-  }
-
   public String getUrl() {
-    return url;
-  }
-
-  public void setUrl(String url) {
-    this.url = url;
+    return this.url;
   }
 
   public String getThumbnail() {
     return thumbnail;
   }
-
-  public void setThumbnail(String thumbnail) {
-    this.thumbnail = thumbnail;
-  }
-
 
   @RequiresApi(api = VERSION_CODES.O)
   public String getPast() {

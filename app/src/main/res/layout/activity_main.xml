@@ -18,13 +18,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/header_nav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/nav_header" />
+          android:id="@+id/header_nav"
+          android:layout_width="wrap_content"
+          android:layout_height="@dimen/height_section"
+          android:adjustViewBounds="true"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/nav_header" />
 
         <TextView
             android:id="@+id/title_header"
@@ -38,14 +39,15 @@
             tools:text="@string/title_header" />
 
         <ImageView
-            android:id="@+id/header_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_header"
-            android:contentDescription="@string/header_profile" />
+          android:id="@+id/header_profile"
+          android:layout_width="wrap_content"
+          android:layout_height="@dimen/height_section"
+          android:adjustViewBounds="true"
+          android:contentDescription="@string/header_profile"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/profile_header" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -74,11 +76,9 @@
       android:layout_marginEnd="@dimen/margin_container"
       app:cardCornerRadius="@dimen/card_radius"
       app:cardElevation="@dimen/card_elevation"
-      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/section_rv"
-      app:layout_constraintVertical_bias="0.0">
+      app:layout_constraintTop_toBottomOf="@+id/section_rv">
 
         <androidx.constraintlayout.widget.ConstraintLayout
           android:id="@+id/wrapper_main"
@@ -101,12 +101,15 @@
               android:id="@+id/details_main"
               android:layout_width="0dp"
               android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/padding_item"
               android:padding="8dp"
               android:background="@color/normal_gray"
               app:layout_constraintBottom_toBottomOf="parent"
               app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.0"
               app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toBottomOf="@+id/image_main">
+              app:layout_constraintTop_toBottomOf="@+id/image_main"
+              app:layout_constraintVertical_bias="1.0">
 
                 <TextView
                   android:id="@+id/contributor_main"
@@ -155,11 +158,10 @@
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/related_rv"
       android:layout_width="0dp"
-      android:layout_height="wrap_content"
+      android:layout_height="0dp"
       android:layout_marginTop="@dimen/padding_item"
-      android:layout_marginBottom="@dimen/padding_item"
       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-      app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/card_main"
@@ -191,16 +193,5 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/loading_indicator"
       tools:text="Forking your news" />
-    <ImageView
-      android:id="@+id/bottom_nav"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:adjustViewBounds="true"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintWidth_percent="1"
-      app:srcCompat="@drawable/bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity
   private static final int NEWS_LOADER_ID = 1;
   private static final String API_KEY = "9cd3ecdd-3d2b-45c1-8db1-f14ca8bdedc2";
   private static final String BASE_URL = "http://content.guardianapis.com";
+  private static final String SITE_URL = "http://theguardian.com";
   private static final String NEWS_REQUEST_URL = BASE_URL + "/search";
   public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity
     newsAdapter.clear();
 
     if (newsList != null && !newsList.isEmpty()) {
-      setUpMain(((ArrayList<News>) newsList).remove(0));
+      setUpMain(newsList.remove(0));
       newsAdapter.addAll(newsList);
     } else {
       setUpEmptyView();
@@ -164,11 +165,11 @@ public class MainActivity extends AppCompatActivity
   private void setUpSections() {
     // Inflate sections with fake data
     sections = new ArrayList<>();
-    sections.add(new Section("News"));
-    sections.add(new Section("Opinion"));
-    sections.add(new Section("Sport"));
-    sections.add(new Section("Culture"));
-    sections.add(new Section("Lifestyle"));
+    sections.add(new Section("News", SITE_URL + "/news"));
+    sections.add(new Section("Opinion", SITE_URL + "/opinion"));
+    sections.add(new Section("Sport", SITE_URL + "/sport"));
+    sections.add(new Section("Culture", SITE_URL + "/culture"));
+    sections.add(new Section("Lifestyle", SITE_URL + "/lifestyle"));
 
     SectionAdapter sectionAdapter = new SectionAdapter(sections);
     rvSection.setAdapter(sectionAdapter);
@@ -182,6 +183,14 @@ public class MainActivity extends AppCompatActivity
         return true;
       }
     });
+
+    ItemClickSupport.addTo(rvSection).setOnItemClickListener(
+        (recyclerView, position, v) -> {
+          Section currentSection = sectionAdapter.getItem(position);
+          Uri sectionUri = Uri.parse(currentSection.getUrl());
+          startActivity(new Intent(Intent.ACTION_VIEW, sectionUri));
+        }
+    );
   }
 
   private void setUpRelated() {
